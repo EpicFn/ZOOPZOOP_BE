@@ -18,9 +18,12 @@
 
 **홈페이지:** [ZoopZoop](https://www.zoopzoop.kro.kr/)
 
-FE Repository: [Link](https://github.com/prgrms-web-devcourse-final-project/WEB5_6_ZOOPZOOP_FE)
+FE Repository: [Link](https://github.com/EpicFn/ZOOPZOOP_FE)
 
 Chrome Extension Repository: [Link](https://github.com/prgrms-web-devcourse-final-project/WEB5_6_ZOOPS_TENSION_FE)
+
+## 시연
+https://github.com/user-attachments/assets/594dcc98-328a-4972-975b-bef8e7950580
 
 ---
 
@@ -132,3 +135,5 @@ java -jar build/libs/backend-0.0.1-SNAPSHOT.jar
 
 ## 📑추가 자료
 [**백엔드 개발 컨벤션**](./DEV_GUIDE.md)
+
+

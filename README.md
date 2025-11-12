@@ -136,4 +136,25 @@ java -jar build/libs/backend-0.0.1-SNAPSHOT.jar
 ## 📑추가 자료
 [**백엔드 개발 컨벤션**](./DEV_GUIDE.md)
 
+<br/>
+
+# 아키텍처
+### 기능 정의서
+<img width="854" height="639" alt="Pasted image 20251016122037" src="https://github.com/user-attachments/assets/8669c204-32ae-4a85-8646-73be18bb8265" />
+
+### 유저 스토리
+<img width="1337" height="849" alt="Pasted image 20251016122147" src="https://github.com/user-attachments/assets/e6321b37-a4da-40dd-8ddc-ba1d1587a96a" />
+
+### IA
+<img width="1746" height="643" alt="Pasted image 20251016122249" src="https://github.com/user-attachments/assets/6d813263-de88-475a-b909-f67827d06387" />
+
+### ERD
+<img width="1524" height="1142" alt="Pasted image 20251016122309" src="https://github.com/user-attachments/assets/67c19417-14df-4141-b30c-7614e5da33ce" />
+
+### 와이어 프레임
+<img width="12787" height="14798" alt="와이어프레임 초안" src="https://github.com/user-attachments/assets/37c85fba-eacd-47e1-a12e-5cb9bad57d91" />
+
+### API 명세서
+<img width="1232" height="908" alt="Pasted image 20251016122339" src="https://github.com/user-attachments/assets/6b8310ca-0b12-4c6e-aa8f-f797e7770025" />
+
 

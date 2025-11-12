@@ -138,7 +138,6 @@ java -jar build/libs/backend-0.0.1-SNAPSHOT.jar
 
 <br/>
 
-# 아키텍처
 ### 기능 정의서
 <img width="854" height="639" alt="Pasted image 20251016122037" src="https://github.com/user-attachments/assets/8669c204-32ae-4a85-8646-73be18bb8265" />
 

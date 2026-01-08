@@ -89,6 +89,7 @@ jobs:
               -v ~/application-secrets.yml:/app/application-secrets.yml \
               -e SPRING_PROFILES_ACTIVE=server \
               -e SPRING_CONFIG_IMPORT=optional:file:/app/application-secrets.yml \
+              -e SENTRY_DSN="${{ secrets.SENTRY_DSN }}"
               $IMAGE_NAME
             
             

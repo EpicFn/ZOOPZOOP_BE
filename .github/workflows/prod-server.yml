@@ -32,7 +32,7 @@ jobs:
           username: ec2-user
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            IMAGE_NAME="ghcr.io/epicfn/zoopzoop_be/zoopzoop:latest"
+            IMAGE_NAME="ghcr.io/epicfn/zoopzoop_be:latest"
             
             # GHCR 로그인 (EC2)
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{github.repository_owner}}" --password-stdin

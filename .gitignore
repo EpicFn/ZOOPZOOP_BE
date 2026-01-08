@@ -379,4 +379,11 @@ gradle-app.setting
 # Java heap dump
 *.hprof
 
+# Terraform setting file
+*.tfvars
+*.tfvars.json
+*.tfstate
+*.tfstate.*
+.terraform/
+
 # End of https://www.toptal.com/developers/gitignore/api/java,gradle,intellij,visualstudiocode,kotlin,maven,git,windows,macos,netbeans,eclipse

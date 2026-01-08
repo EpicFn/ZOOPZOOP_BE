@@ -32,12 +32,13 @@ jobs:
           username: ec2-user
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            IMAGE_NAME="ghcr.io/epicfn/zoopzoop_be/zoopzoop:latest"
             
             # GHCR 로그인 (EC2)
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{github.repository_owner}}" --password-stdin
             
             # 최신 이미지 pull
-            docker pull ghcr.io/${{ github.repository }}/zoopzoop:latest
+            docker pull $IMAGE_NAME
             
             # 서버에 시크릿 파일 생성
             echo "${{ secrets.APPLICATION_SECRETS }}" > ~/application-secrets.yml
@@ -64,8 +65,8 @@ jobs:
             CURRENT_CONFIG=$(curl -s -H "Authorization: Bearer $TOKEN" \
               "http://${NPM_HOST}/api/nginx/proxy-hosts/${PROXY_HOST_ID}")
             
-            CURRENT_TARGET=$(echo $CURRENT_CONFIG | jq -r '.[0].forward_host // .forward_host')
-            CURRENT_PORT=$(echo $CURRENT_CONFIG | jq -r '.[0].forward_port // .forward_port')
+            CURRENT_TARGET=$(echo $CURRENT_CONFIG | jq -r '.forward_host')
+            CURRENT_PORT=$(echo $CURRENT_CONFIG | jq -r '.forward_port')
             
             echo "Current NPM target: $CURRENT_TARGET:$CURRENT_PORT"
             
@@ -88,7 +89,7 @@ jobs:
               -v ~/application-secrets.yml:/app/application-secrets.yml \
               -e SPRING_PROFILES_ACTIVE=server \
               -e SPRING_CONFIG_IMPORT=optional:file:/app/application-secrets.yml \
-              ghcr.io/${{ github.repository }}/zoopzoop:latest
+              $IMAGE_NAME
             
             
             # 헬스체크 (Spring Boot Actuator)

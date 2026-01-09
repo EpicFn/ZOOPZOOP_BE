@@ -40,8 +40,8 @@ jobs:
             # 최신 이미지 pull
             docker pull $IMAGE_NAME
             
-            # 서버에 시크릿 파일 생성
-            echo "${{ secrets.APPLICATION_SECRETS }}" > ~/application-secrets.yml
+            # 시크릿을 .env 파일로 저장
+            echo "${{ secrets.APPLICATION_SECRETS }}" > ~/application.env
             
             # NPM API 설정
             NPM_HOST="localhost:81"
@@ -86,13 +86,7 @@ jobs:
               -p $NEW_PORT:8080 \
               --name $NEW_CONTAINER \
               --network common \
-              -v ~/application-secrets.yml:/app/application-secrets.yml \
-              -e SPRING_PROFILES_ACTIVE=server \
-              -e SPRING_CONFIG_IMPORT=optional:file:/app/application-secrets.yml \
-              -e SENTRY_DSN="${{ secrets.SENTRY_DSN }}" \
-              -e JWT_SECRET_KEY="${{ secrets.JWT_SECRET_KEY }}" \
-              -e JWT_ACCESS_TOKEN_VALIDITY="${{ secrets.JWT_ACCESS_TOKEN_VALIDITY }}" \
-              -e JWT_REFRESH_TOKEN_VALIDITY="${{ secrets.JWT_REFRESH_TOKEN_VALIDITY }}" \
+              --env-file ~/application.env \
               $IMAGE_NAME
             
             

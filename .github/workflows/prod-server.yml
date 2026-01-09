@@ -89,7 +89,10 @@ jobs:
               -v ~/application-secrets.yml:/app/application-secrets.yml \
               -e SPRING_PROFILES_ACTIVE=server \
               -e SPRING_CONFIG_IMPORT=optional:file:/app/application-secrets.yml \
-              -e SENTRY_DSN="${{ secrets.SENTRY_DSN }}"
+              -e SENTRY_DSN="${{ secrets.SENTRY_DSN }}" \
+              -e JWT_SECRET_KEY="${{ secrets.JWT_SECRET_KEY }}" \
+              -e JWT_ACCESS_TOKEN_VALIDITY="${{ secrets.JWT_ACCESS_TOKEN_VALIDITY }}" \
+              -e JWT_REFRESH_TOKEN_VALIDITY="${{ secrets.JWT_REFRESH_TOKEN_VALIDITY }}" \
               $IMAGE_NAME
             
             
